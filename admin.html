@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - TransferTracker</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="admin-page">
+
+    <!-- Navbar -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                ⚽ <span>Transfer</span><strong>Tracker</strong>
+            </a>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="index.html#transfers">Transfers</a>
+                <a href="clubs.html">Clubs</a>
+                <a href="#">Admin</a>
+            </nav>
+
+            <div class="nav-actions">
+
+                <button id="themeToggle" aria-label="Toggle dark mode">
+                    🌙
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- Admin Content -->
+
+    <main class="admin-container">
+
+        <!-- Page Heading -->
+
+        <section class="admin-heading">
+
+            <span class="section-label">
+                ADMIN PANEL
+            </span>
+
+            <h1>
+                Transfer Management
+            </h1>
+
+            <p>
+                Add, update and manage football transfer records.
+            </p>
+
+            <button id="logoutButton">
+                Logout
+            </button>
+
+
+        </section>
+
+        <!-- Dashboard Statistics -->
+
+        <section class="admin-stats">
+            <div class="admin-stat-card">
+                <span> Total Transfers </span>
+                <h3 id="totalTransfers">0</h3>
+            </div>
+            <div class="admin-stat-card">
+                <span> Confirmed Transfere</span>
+                <h3 id="confirmedTransfers">0</h3>
+            </div>
+
+            <div class="admin-stat-card">
+                <span>Clubs Involved</span>
+                <h3 id="clubsInvolved">0</h3>
+            </div>
+
+        </section>
+
+        <!-- Add / Edit Transfer -->
+
+        <section class="admin-card">
+
+            <div class="admin-card-heading">
+
+                <div>
+
+                    <span class="admin-label">
+                        TRANSFER DATA
+                    </span>
+
+                    <h2>
+                        Add New Transfer
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <form id="transferForm" class="transfer-form">
+
+                <div class="form-group">
+                    <label for="player">Player Name</label>
+                    <input
+                        type="text"
+                        id="player"
+                        placeholder="e.g. Rodri"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="oldClub">Old Club</label>
+                    <input
+                        type="text"
+                        id="oldClub"
+                        placeholder="e.g. Manchester City"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="newClub">New Club</label>
+                    <input
+                        type="text"
+                        id="newClub"
+                        placeholder="e.g. FC Barcelona"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="position">Position</label>
+                    <input
+                        type="text"
+                        id="position"
+                        placeholder="e.g. Defensive Midfielder"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="positionCategory">
+                        Position Category
+                    </label>
+
+                    <select id="positionCategory" required>
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option value="Goalkeeper">
+                            Goalkeeper
+                        </option>
+
+                        <option value="Defender">
+                            Defender
+                        </option>
+
+                        <option value="Full Back">
+                            Full Back
+                        </option>
+
+                        <option value="Midfielder">
+                            Midfielder
+                        </option>
+
+                        <option value="Winger">
+                            Winger
+                        </option>
+
+                        <option value="Forward">
+                            Forward
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="marketValue">
+                        Market Value
+                    </label>
+
+                    <input
+                        type="text"
+                        id="marketValue"
+                        placeholder="e.g. €60M"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="status">Status</label>
+
+                    <select id="status" required>
+
+                        <option value="">
+                            Select Status
+                        </option>
+
+                        <option value="Confirmed">
+                            Confirmed
+                        </option>
+
+                        <option value="Rumour">
+                            Rumour
+                        </option>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="transferDate">
+                        Transfer Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="transferDate"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group full-width">
+                    <label for="image">
+                        Player Image Path
+                    </label>
+
+                    <input
+                        type="text"
+                        id="image"
+                        placeholder="images/player.jpg"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="oldClubLogo">
+                        Old Club Logo Path
+                    </label>
+
+                    <input
+                        type="text"
+                        id="oldClubLogo"
+                        placeholder="images/clubs/club.png"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="newClubLogo">
+                        New Club Logo Path
+                    </label>
+
+                    <input
+                        type="text"
+                        id="newClubLogo"
+                        placeholder="images/clubs/club.png"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        id="submitButton"
+                        class="admin-submit-btn"
+                    >
+                        Add Transfer
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <p id="message" class="admin-message"></p>
+
+        </section>
+
+
+        <!-- Manage Transfers -->
+
+        <section class="admin-card">
+
+            <div class="admin-card-heading">
+
+                <div>
+
+                    <span class="admin-label">
+                        DATABASE
+                    </span>
+
+                    <h2>
+                        Manage Transfers
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="admin-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Player</th>
+                            <th>Old Club</th>
+                            <th>New Club</th>
+                            <th>Value</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="transferTableBody">
+                    
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

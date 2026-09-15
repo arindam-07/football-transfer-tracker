@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Football Transfer Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <header class="navbar">
+    <div class="nav-container">
+
+        <a href="#" class="logo">
+            ⚽ <span>Transfer</span><strong>Tracker</strong>
+        </a>
+
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="index.html#transfers">Transfers</a>
+            <a href="clubs.html">Clubs</a>
+            <a href="about.html">About</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="themeToggle" aria-label="Toggle dark mode">
+                🌙
+            </button>
+        </div>
+
+    </div>
+</header>
+    <main class="container">
+        <section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">⚡ FOOTBALL TRANSFERS</span>
+
+        <h2>
+            TRACK EVERY
+            <span>BIG MOVE.</span>
+        </h2>
+
+        <p>
+            Follow the latest football transfers, transfer fees,
+            clubs and player movements from around the world.
+        </p>
+
+        <a href="#transfers" class="hero-button">
+            Explore Transfers →
+        </a>
+
+    </div>
+
+    <div class="hero-players">
+
+    <img src="images/hero/elliot.png"
+         class="hero-player player-left"
+         alt="Elliot Anderson">
+
+    <img src="images/hero/rodri.png"
+         class="hero-player player-center"
+         alt="Rodri">
+
+    <img src="images/hero/rogers.png"
+         class="hero-player player-right"
+         alt="Morgan Rogers">
+
+</div>
+</section>
+        <section id="transfers" class="transfer-stats">
+            <div class="stat-card">
+                <h3 id="totalTransfers">0</h3>
+                <p>Total Transfers</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="totalValue">€0M</h3>
+                <p>Total  Transfer Value </p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="totalPositions">0</h3>
+                <p>Position Categories</p>
+            </div>
+
+        </section>
+
+        <section class="latest-transfers">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">LATEST MOVES</span>
+                    <h2>Latest Transfers</h2>
+                </div>
+                <p> Recent confirmed Player Movement</p>
+            </div>
+            <div id="latestTransferContainer" class="latest-transfer-container"> 
+            </div>
+
+        </section>
+
+
+        
+
+        <section class="filters">
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search player...."
+            >
+        </div>
+    <select id="clubFilter">
+        <option value="all">All Clubs</option>
+        <option value="FC Barcelona">FC Barcelona</option>
+        <option value="Real Madrid">Real Madrid</option>
+        <option value="Liverpool F.C">Liverpool F.C</option>
+        <option value="Manchester City">Manchester City</option>
+        <option value="Manchester United">Manchester United</option>
+        <option value="FC Bayern Munich">FC Bayern Munich</option>
+        <option value="Borussia Dortmund">Borussia Dortmund</option>
+        <option value="Inter Milan">Inter Milan</option>
+        <option value="AC Milan">AC Milan</option>
+        <option value="Paris Saint-Germain">Paris Saint-Germain</option>
+    </select>
+
+    <select id="positionFilter">
+        <option value="all">All Positions</option>
+        <option value="Goalkeeper">Goalkeeper</option>
+        <option value="Defender">Defender</option>
+        <option value="Full Back">Full Back</option>
+        <option value="Midfielder">Midfielder</option>
+        <option value="Winger">Winger</option>
+        <option value="Forward">Forward</option>
+    </select>
+
+    <select id="sortFilter">
+        <option value="latest">Latest First</option>
+        <option value="oldest">Oldest Firts</option>
+        <option value="highestFee">Highest Fee</option>
+        <option value="lowestFee">Lowest Fee</option>
+        <option value="az">A-Z</option>
+
+    </select>
+
+
+
+
+
+        </section>
+
+                        <!--other section-->
+
+        <section id="transferContainer" class="transfer-container">
+
+        </section>
+    
+
+    </main>
+    <div id="playerModal" class="player-modal">
+        <div class="player-modal-content">
+        
+            <button id="closeModal" class="close-modal">&times;</button>
+
+            <img id="modalPlayerImage" class="modal-player-image" alt="">
+
+            <h2 id="modalPlayerName"></h2>
+            <p id="modalPosition"></p>
+
+            
+            <div class="modal-transfer-route">
+                <div class="modal-club">
+                    <img id="modalOldClubLogo" alt="">
+                    <span id="modalOldClub"></span>
+                </div>
+                <span class="modal-arrow">→</span>
+                <div class="modal-club">
+                    <img id="modalNewClubLogo" alt="">
+                    <span id="modalNewClub"></span>
+                </div>
+            </div>
+            <div class="modal-summary">
+
+                <div class="modal-summary-item">
+                    <span>Transfer Fee</span>
+                    <strong id="modalMarketValue"></strong>
+                </div>
+                
+                <div class="modal-summary-item">
+                    <span>Transfer Date</span>
+                    <strong id="modalTransferDate"></strong>
+                </div>
+                <div class="modal-summary-item">
+                    <span>Status</span>
+                    <strong id="modalStatus"></strong>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>>
