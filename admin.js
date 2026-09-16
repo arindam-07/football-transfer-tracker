@@ -11,7 +11,7 @@ async function loadStatistics() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/transfers"
+            "https://football-transfer-tracker.onrender.com/api/transfers"
         );
 
         const transfers = await response.json();
@@ -96,7 +96,7 @@ transferForm.addEventListener("submit", async function(event) {
         if (editingTransferId) {
 
             response = await fetch(
-                `http://localhost:5000/api/transfers/${editingTransferId}`,
+                `https://football-transfer-tracker.onrender.com/api/transfers/${editingTransferId}`,
                 {
                     method: "PUT",
                     headers: {
@@ -113,7 +113,7 @@ transferForm.addEventListener("submit", async function(event) {
         else {
 
             response = await fetch(
-                "http://localhost:5000/api/transfers",
+                "https://football-transfer-tracker.onrender.com/api/transfers",
                 {
                     method: "POST",
                     headers: {
@@ -167,7 +167,7 @@ async function loadTransfers() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/transfers"
+            "https://football-transfer-tracker.onrender.com/api/transfers"
         );
 
         const transfers = await response.json();
@@ -214,7 +214,7 @@ async function editTransfer(id) {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/transfers/id/${id}`
+            `https://football-transfer-tracker.onrender.com/api/transfers/id/${id}`
         );
 
         const transfer = await response.json();
@@ -297,7 +297,7 @@ async function deleteTransfer(id) {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/transfers/${id}`,
+            `https://football-transfer-tracker.onrender.com/api/transfers/${id}`,
             {
                 method: "DELETE",
                 headers: {

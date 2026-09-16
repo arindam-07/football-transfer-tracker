@@ -990,7 +990,7 @@ function closeClubDetails() {
 // FETCH TRANSFERS FROM API
 // =========================
 
-fetch("http://localhost:5000/api/transfers")
+fetch("https://football-transfer-tracker.onrender.com/api/transfers")
 
     .then(function(response) {
 
