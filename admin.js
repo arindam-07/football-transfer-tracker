@@ -335,3 +335,4 @@ async function deleteTransfer(id) {
 
 // LOAD TRANSFERS WHEN PAGE OPENS
 loadTransfers();
+loadStatistics();
